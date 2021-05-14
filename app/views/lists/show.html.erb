@@ -1,10 +1,10 @@
 
 <% if @list.photo.attached? %>
-  <div style='background-image: url(<%= cl_image_path @list.photo.key %>); width: 400px; height: 300px; crop: fill;'>
+  <div class="card-category" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @list.photo.key %>); height: 400px;'>
   <h1><%= @list.name %></h1>
   </div>
 <% else %>
-   <h1><%= @list.name %></h1>
+   <h1 class="card-category" ><%= @list.name %></h1>
 <% end %>
 
 <% @list.bookmarks.each do |bookmark| %>
@@ -14,5 +14,6 @@
   <%= link_to 'Remove Bookmark', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %><br>
 <% end %><br>
 
-<%= link_to 'Go back', lists_path %><br>
-<%= link_to 'Add a Bookmark', new_list_bookmark_path(@list) %><br>
+<%= link_to 'Go back', lists_path, class: "btn btn-ghost", id: "button-card" %><br>
+<br>
+<%= link_to 'Add a Bookmark', new_list_bookmark_path(@list), class: "btn btn-ghost", id: "button-card" %><br>

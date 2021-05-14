@@ -1,0 +1,21 @@
+.btn-ghost {
+  color: white;
+  border: 1px solid white;
+  padding: 5px 18px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  font-size: small;
+}
+
+.btn-ghost:hover {
+  opacity: 5;
+  color: white;
+}
+
+#button-card{
+  color:#4A4A4A;
+  border: 1px solid #4A4A4A;
+  margin-left: 30px;
+}
