@@ -10,7 +10,7 @@ require 'open-uri'
 
 url = 'http://tmdb.lewagon.com/movie/top_rated'
 user_serialized = URI.open(url).read
-movies = JSON.parse(user_serialized)["results"].first(10)
+movies = JSON.parse(user_serialized)["results"].first(20)
 
 # p user
 Movie.destroy_all

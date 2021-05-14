@@ -2,8 +2,9 @@
 <% @list.bookmarks.each do |bookmark| %>
   <%= bookmark.comment %><br>
   <%= image_tag bookmark.movie.poster_url, width: 200 %><br>
-  <%= bookmark.movie.rating %>
+  <%= "#{bookmark.movie.rating} / 10" %>
+  <%= link_to 'Remove Bookmark', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %><br>
 <% end %><br>
 
-<%= link_to 'Go back', lists_path %>
-<%= link_to 'Delete Bookmark', bookmark_path%>
+<%= link_to 'Go back', lists_path %><br>
+<%= link_to 'Add a Bookmark', new_list_bookmark_path(@list) %><br>
