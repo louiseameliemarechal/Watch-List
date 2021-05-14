@@ -1,4 +1,12 @@
-<h1><%= @list.name %></h1>
+
+<% if @list.photo.attached? %>
+  <div style='background-image: url(<%= cl_image_path @list.photo.key %>); width: 400px; height: 300px; crop: fill;'>
+  <h1><%= @list.name %></h1>
+  </div>
+<% else %>
+   <h1><%= @list.name %></h1>
+<% end %>
+
 <% @list.bookmarks.each do |bookmark| %>
   <%= bookmark.comment %><br>
   <%= image_tag bookmark.movie.poster_url, width: 200 %><br>
